@@ -1,18 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Fino Linaje</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fino Linaje</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fuente elegante para el tema de vinos -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <img id="error-img" src="imagen.png" alt="Imagen 404">
-        <h1>404</h1>
-        <p>Lo sentimos, esta página se encuentra en mantenimiento</p>
-        <button onclick="volverInicio()">Volver al inicio</button>
+  <header>
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="logo-img">
+          <img src="assets/logoabuelo.png" alt="vinos la herencia del abuelo">
+        </div>
+        <h1 class="logo">Vinos FINO LINAJE</h1>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-nosotros">Nosotros</a></li>
+        <li><a href="#nuestra-historia">Historia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div class="hero-texto">
+      <h2>LA HERENCIA DEL ABUELO</h2>
+      <h3>Vino blanco</h3>
+      <p>Vino ámbar dulce de manzana elaborado con manzanas 100% orgánicas de nuestra huerta, para disfrutar con calma y elegancia.</p>
+      <button id="comprarBtn">Comprar ahora</button>
     </div>
+    <div class="hero-imagen">
+      <img src="assets/amber_wine.png" alt="Botella de vino ámbar de manzana">
+    </div>
+  </main>
+
+  <section id="sobre-nosotros" class="sobre-nosotros">
+    <div class="sobre-contenido">
+      <div class="sobre-imagen">
+        <img src="assets/manzanas.jpeg" alt="Manzanas">
+      </div>
+      <div class="sobre-texto">
+        <div class="icono">
+          <i class="fas fa-wine-bottle"></i>
+        </div>
+        <h4>Sobre Nosotros</h4>
+        <p>Pasión, tradición y calidad en cada copa.</p>
+        <p>Conoce nuestro legado y pasión por el arte del vino.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nuestra-historia" class="nuestra-historia">
+    <div class="historia-contenido">
+      <div class="historia-texto">
+        <div class="icono">
+          <i class="fas fa-history"></i>
+        </div> 
+        <h4>NUESTRA HISTORIA</h4>
+        <p>Fundada en 1985, Vinos Fino Linaje nació de la unión entre la pasión por el vino y la herencia artesanal de nuestros viñedos familiares.</p>
+        <p>Desde nuestros inicios, nos hemos dedicado a preservar las técnicas tradicionales de vinificación mientras incorporamos innovaciones sostenibles que respetan nuestro entorno.</p>
+      </div>
+      <div class="historia-imagen">
+        <img src="assets/mazano.jpeg" alt="Manzano de nuestros viñedos">
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="contacto-contenido">
+      <div class="icono">
+        <i class="fas fa-envelope"></i>
+      </div> 
+      <h4>Contacto</h4> 
+      <p>Puedes ponerte en contacto con nosotros a través de nuestro WhatsApp y nuestra página de Facebook</p>
+      <a href="https://facebook.com/profile.php?id=61579924225602" target="_blank" class="btn-facebook">
+        <i class="fab fa-facebook-f"></i>
+        Visitar Facebook
+      </a>
+    </div>
+  </section>
+
+  <footer> 
+    <p>© 2025 Quetzi Hack. Todos los derechos reservados.</p> 
+  </footer>
 </body>
 </html>

@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fino Linaje</title>
+  <title>Fino Linaje | Premium Selection</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Fuente elegante para el tema de vinos -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logoabuelo.ico" type="image/x-icon">
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -16,16 +15,18 @@
     <nav class="navbar">
       <div class="logo-container">
         <div class="logo-img">
-          <img src="assets/logoabuelo.png" alt="vinos la herencia del abuelo">
+          <img src="assets/logoabuelo.png" alt="Vinos la herencia del abuelo">
         </div>
-        <h1 class="logo">Vinos FINO LINAJE</h1>
+        <h1 class="logo">GRUPO DON SANTOS</h1>
       </div>
+      
       <ul class="nav-menu">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobre-nosotros">Nosotros</a></li>
+        <li><a href="#sobre-nosotros">Legado</a></li>
         <li><a href="#nuestra-historia">Historia</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
+
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -33,67 +34,95 @@
       </div>
     </nav>
   </header>
-
   <main id="inicio" class="hero">
-    <div class="hero-texto">
-      <h2>LA HERENCIA DEL ABUELO</h2>
-      <h3>Vino blanco</h3>
-      <p>Vino ámbar dulce de manzana elaborado con manzanas 100% orgánicas de nuestra huerta, para disfrutar con calma y elegancia.</p>
-      <button id="comprarBtn">Comprar ahora</button>
-    </div>
-    <div class="hero-imagen">
-      <img src="assets/amber_wine.png" alt="Botella de vino ámbar de manzana">
+    <div class="overlay"></div> <div class="hero-content-wrapper">
+        <div class="hero-texto">
+            <h3>LA ELEGANCIA DE UN LEGADO</h3>
+            <h2>LA HERENCIA<br>DEL ABUELO</h2>
+            <div class="separator"></div>
+            <p>Vino dulce ámbar de manzana 100% orgánica. Una fusión entre la maestría artesanal y la elegancia moderna.</p>
+            <button id="comprarBtn">COMPRAR VINO DE EXCELENCIA</button>
+        </div>
+        <div class="hero-imagen">
+            <img src="assets/amber_wine.png" alt="Botella de vino ámbar">
+            <div class="glow"></div> </div>
     </div>
   </main>
 
-  <section id="sobre-nosotros" class="sobre-nosotros">
+  <section id="sobre-nosotros" class="section-dark">
+    <div class="section-header">
+        <h3>La Dualidad Fino Linaje</h3>
+        <div class="separator-center"></div>
+    </div>
+    
+    <div class="features-grid">
+        <div class="feature-item">
+             <div class="icono">
+                <i class="fas fa-wine-glass-alt"></i>
+             </div>
+             <h4>Alma Artesanal</h4>
+             <p>Manzanas seleccionadas de nuestra huerta. Sabores únicos, fermentación rigurosa y pasión en cada gota.</p>
+        </div>
+
+        <div class="feature-item">
+            <div class="icono">
+               <i class="fas fa-award"></i>
+            </div>
+            <h4>Cuerpo Premium</h4>
+            <p>Tecnología de punta y estándares globales. Eficiencia, volumen y una presentación inigualable.</p>
+       </div>
+    </div>
+
     <div class="sobre-contenido">
       <div class="sobre-imagen">
         <img src="assets/manzanas.jpeg" alt="Manzanas">
       </div>
       <div class="sobre-texto">
-        <div class="icono">
-          <i class="fas fa-wine-bottle"></i>
-        </div>
-        <h4>Sobre Nosotros</h4>
-        <p>Pasión, tradición y calidad en cada copa.</p>
-        <p>Conoce nuestro legado y pasión por el arte del vino.</p>
+        <h4>Pasión y Tradición</h4>
+        <p>Conoce nuestro legado y pasión por el arte del vino. Cada botella cuenta una historia de tierra, esfuerzo y tiempo.</p>
       </div>
     </div>
   </section>
 
-  <section id="nuestra-historia" class="nuestra-historia">
+  <section id="nuestra-historia" class="section-darker">
     <div class="historia-contenido">
       <div class="historia-texto">
-        <div class="icono">
-          <i class="fas fa-history"></i>
+        <div class="icono-small">
+            <i class="fas fa-history"></i>
         </div> 
-        <h4>NUESTRA HISTORIA</h4>
-        <p>Fundada en 1985, Vinos Fino Linaje nació de la unión entre la pasión por el vino y la herencia artesanal de nuestros viñedos familiares.</p>
-        <p>Desde nuestros inicios, nos hemos dedicado a preservar las técnicas tradicionales de vinificación mientras incorporamos innovaciones sostenibles que respetan nuestro entorno.</p>
+        <h4>Nuestra Historia</h4>
+        <p class="date">FUNDADA EN 1985</p>
+        <p>Vinos Fino Linaje nació de la unión entre la pasión por el vino y la herencia artesanal. Preservamos técnicas tradicionales mientras incorporamos innovaciones sostenibles.</p>
       </div>
       <div class="historia-imagen">
-        <img src="assets/mazano.jpeg" alt="Manzano de nuestros viñedos">
+        <img src="assets/mazano.jpeg" alt="Viñedos">
       </div>
     </div>
   </section>
 
-  <section id="contacto" class="contacto">
+  <section id="contacto" class="contacto section-dark">
     <div class="contacto-contenido">
-      <div class="icono">
-        <i class="fas fa-envelope"></i>
-      </div> 
-      <h4>Contacto</h4> 
-      <p>Puedes ponerte en contacto con nosotros a través de nuestro WhatsApp y nuestra página de Facebook</p>
-      <a href="https://facebook.com/profile.php?id=61579924225602" target="_blank" class="btn-facebook">
-        <i class="fab fa-facebook-f"></i>
-        Visitar Facebook
-      </a>
+      <h4>Solidez y Visión</h4>
+      <p>Únete a nuestro linaje. Contáctanos para pedidos exclusivos.</p>
+      
+      <div class="social-buttons">
+          <button id="btnWhatsapp" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+          <a href="https://facebook.com/profile.php?id=61579924225602" target="_blank" class="btn-outline">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+      </div>
     </div>
   </section>
 
   <footer> 
-    <p>© 2025 Quetzi Hack. Todos los derechos reservados.</p> 
+    <div class="footer-badges">
+        <div class="badge"><i class="fas fa-medal"></i><br>Calidad</div>
+        <div class="badge"><i class="fas fa-leaf"></i><br>Orgánico</div>
+        <div class="badge"><i class="fas fa-globe-americas"></i><br>Global</div>
+    </div>
+    <div class="footer-text">
+        <p>© 2025 web elaborada por <a href="https://quetzihack.vercel.app/">Quetzi Hack</a>. Todos los derechos reservados.</p> 
+    </div>
   </footer>
 </body>
 </html>

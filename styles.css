@@ -1,3 +1,14 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --bg-dark: #0b0b0b;      /* Fondo principal casi negro */
+    --bg-panel: #141414;     /* Fondo de secciones */
+    --gold: #c5a059;         /* Color dorado/cobre premium */
+    --gold-light: #e5cca0;   /* Dorado claro para hovers */
+    --text-main: #dcdcdc;    /* Texto gris claro */
+    --text-muted: #888888;   /* Texto secundario */
+    --white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,439 +16,428 @@
 }
 
 body {
-  font-family: 'Cormorant Garamond', serif;
-  background-color: #f2e5ca;
-  color: #3b2b1a;
-  line-height: 1.6;
+  font-family: 'Cormorant Garamond', serif; /* Elegante para textos largos */
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .logo {
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, h4, .logo, button {
+  font-family: 'Cinzel', serif; /* Elegante para títulos */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* --- NAVBAR --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  background-color: #f2e5ca;
-  position: relative;
+  padding: 1.5rem 5%;
+  background-color: rgba(11, 11, 11, 0.95); /* Semitransparente */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1); /* Línea sutil dorada */
 }
-
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px; /* Espacio entre el logo y el texto */
 }
 
 .logo-img img {
-  max-width: 100px;
-  height: auto;
+  height: 55px; /* Altura ajustada para que no deforme la barra */
+  width: auto;
+  object-fit: contain;
+  
+  /* --- TRUCO DE COLOR --- */
+  /* Si tu logo original es negro y no se ve en el fondo oscuro, 
+     quita los símbolos de comentario de la línea de abajo para volverlo blanco: */
+     
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.2rem; /* Ajustado ligeramente para balancear con la imagen */
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
+/* Ajuste para móvil para que el logo no ocupe toda la pantalla */
+@media screen and (max-width: 480px) {
+  .logo-img img {
+      height: 40px;
+  }
+  .logo {
+      font-size: 1rem;
+  }
+}
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #3b2b1a;
+  color: var(--text-main);
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #8b4513;
+  color: var(--gold);
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #3b2b1a;
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
+/* --- HERO SECTION --- */
 .hero {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 5rem 10%;
-  flex-wrap: wrap;
+  padding: 8rem 5% 4rem;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+  position: relative;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
 }
 
 .hero-texto {
-  max-width: 40%;
-}
-
-.hero-texto h2 {
-  font-size: 4rem;
-  line-height: 1.1;
-  color: #5a3921;
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
 }
 
 .hero-texto h3 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #8b4513;
+  font-family: 'Lato', sans-serif; /* Contraste moderno */
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.hero-texto h2 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.separator {
+    width: 60px;
+    height: 2px;
+    background-color: var(--gold);
+    margin-bottom: 1.5rem;
 }
 
 .hero-texto p {
   font-size: 1.1rem;
-  margin: 1.5rem 0;
-  color: #4e3b28;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  font-weight: 300;
 }
 
-button {
+/* Botones Dorados */
+button, .btn-outline {
   background: transparent;
-  border: 2px solid #3b2b1a;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+  border: 1px solid var(--gold);
+  padding: 1rem 2.5rem;
+  font-size: 0.9rem;
+  color: var(--gold);
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
-button:hover {
-  background-color: #3b2b1a;
-  color: #f2e5ca;
+button:hover, .btn-outline:hover {
+  background-color: var(--gold);
+  color: #000;
+  box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+.hero-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Glow detrás de la botella */
+.glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(197,160,89,0.2) 0%, rgba(0,0,0,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .hero-imagen img {
-  max-width: 350px;
+  max-width: 280px; /* Botella más esbelta */
   height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
 }
 
-/* Estilos para secciones individuales */
-.sobre-nosotros, .contacto {
-  padding: 4rem 10%;
+/* --- SECCIONES GENERALES --- */
+.section-dark {
+    background-color: var(--bg-dark);
+    padding: 6rem 10%;
 }
 
-.sobre-nosotros {
-  background-color: #f7eae6;
+.section-darker {
+    background-color: #050505; /* Un poco más oscuro para contraste */
+    padding: 6rem 10%;
 }
 
-.contacto {
-  background-color: #f7eae6;
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
-/* Sección Sobre Nosotros - Diseño de dos columnas */
-.sobre-contenido {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  margin: 0 auto;
-  gap: 4rem;
+.section-header h3 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.sobre-imagen {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.separator-center {
+    width: 40px;
+    height: 2px;
+    background-color: var(--gold);
+    margin: 0 auto;
 }
 
-.sobre-imagen img {
-  max-width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* Grid de Features (Dualidad) */
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
-.sobre-texto {
-  flex: 1;
-  text-align: center;
-  background-color: #f2e5ca;
-  border-radius: 12px;
-  padding: 3rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  border: 1px solid #e5d4b1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.feature-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
 }
 
-.sobre-texto:hover {
-  transform: translateY(-5px);
+.feature-item .icono {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
 }
 
-/* Sección Contacto - Card más ancha */
-.contacto-contenido {
-  background-color: #f2e5ca;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 12px;
-  padding: 3rem;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  border: 1px solid #e5d4b1;
+.feature-item h4 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
-.contacto-contenido:hover {
-  transform: translateY(-5px);
+.feature-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
 }
 
-/* Estilo especial para la sección de historia */
-.nuestra-historia {
-  padding: 4rem 10%;
-  background-color: #f2e5ca;
+/* Estilos "Sobre Nosotros" e "Historia" integrados */
+.sobre-contenido, .historia-contenido {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Invertir orden visual en Historia para dinamismo */
 .historia-contenido {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  margin: 0 auto;
-  gap: 4rem;
+    flex-direction: row-reverse;
 }
 
-.historia-texto {
-  flex: 1;
-  text-align: center;
-  background-color: #f7eae6;
-  border-radius: 12px;
-  padding: 3rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  border: 1px solid #e5d4b1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.sobre-imagen img, .historia-imagen img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 2px;
+    /* Filtro para que las imágenes se vean más "oscuras/premium" */
+    filter: brightness(0.8) contrast(1.1);
+    transition: 0.3s;
 }
 
-.historia-texto:hover {
-  transform: translateY(-5px);
+.sobre-imagen img:hover, .historia-imagen img:hover {
+    filter: brightness(1);
 }
 
-.historia-imagen {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.sobre-texto, .historia-texto {
+    flex: 1;
 }
 
-.historia-imagen img {
-  max-width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.sobre-texto h4, .historia-texto h4 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
 }
 
-.icono {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #5a3921;
-  background-color: #e5d4b1;
-  border-radius: 50%;
+.historia-texto .date {
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+    font-family: 'Cinzel', serif;
 }
 
-.btn-facebook {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  background-color: #1877f2;
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  margin-top: 1rem;
+/* --- CONTACTO & FOOTER --- */
+.contacto-contenido {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 4rem 2rem;
+    background: radial-gradient(circle, #151515 0%, #0b0b0b 100%);
 }
 
-.btn-facebook:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  background-color: #0f63d1;
+.contacto-contenido h4 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
 }
 
-.btn-facebook i {
-  font-size: 1.2rem;
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #e5d4b1;
-  font-size: 0.9rem;
+    background-color: #000;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid #222;
 }
 
-/* Responsividad */
-@media screen and (max-width: 1024px) {
-  .hero {
-    padding: 4rem 5%;
-  }
-  
-  .hero-texto {
-    max-width: 45%;
-  }
-  
-  .hero-texto h2 {
-    font-size: 3.5rem;
-  }
-  
-  .sobre-nosotros, .nuestra-historia, .contacto {
-    padding: 4rem 5%;
-  }
+.footer-badges {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.badge {
+    color: var(--gold);
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.badge i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.footer-text a{
+  text-decoration: none;
+  color: #555;
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    background-color: var(--gold); /* Hamburguesa dorada */
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
-    padding: 1rem 2rem;
-  }
-  
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: #f2e5ca;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-    z-index: 100;
-    padding: 2rem 0;
-  }
-  
-  .nav-menu.active {
-    left: 0;
-  }
-  
-  .hamburger {
-    display: flex;
-  }
-  
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 5%;
-  }
-  
-  .hero-texto {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-texto h2 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-imagen img {
-    max-width: 280px;
-  }
-  
-  /* Ajustes para las secciones en móviles */
-  .sobre-contenido,
-  .historia-contenido {
-    flex-direction: column;
-  }
-  
-  .sobre-nosotros, .nuestra-historia, .contacto {
-    padding: 2rem 5%;
-  }
-  
-  .sobre-texto,
-  .historia-texto,
-  .contacto-contenido {
-    padding: 2rem;
-    width: 100%;
-  }
-  
-  .sobre-imagen,
-  .historia-imagen {
-    width: 100%;
-  }
-  
-  .sobre-imagen img,
-  .historia-imagen img {
-    max-height: 400px;
-  }
-  
-  .icono {
-    width: 70px;
-    height: 70px;
-    font-size: 2rem;
-  }
-}
+    .hero {
+        padding-top: 7rem;
+        text-align: center;
+    }
 
-@media screen and (max-width: 480px) {
-  .navbar {
-    padding: 1rem;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-  }
-  
-  .hero-texto h2 {
-    font-size: 2rem;
-  }
-  
-  .hero-texto h3 {
-    font-size: 1.2rem;
-  }
-  
-  .hero-texto p {
-    font-size: 1rem;
-  }
-  
-  .sobre-texto,
-  .historia-texto,
-  .contacto-contenido {
-    padding: 1.5rem;
-  }
-  
-  .icono {
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-  }
+    .hero-content-wrapper {
+        flex-direction: column-reverse; /* Texto abajo imagen en móvil */
+        gap: 2rem;
+    }
+
+    .hero-texto h2 {
+        font-size: 2.5rem;
+    }
+    
+    .separator { margin: 1.5rem auto; }
+
+    .navbar ul {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--gold);
+    }
+
+    .navbar ul.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .sobre-contenido, .historia-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .historia-contenido { flex-direction: column; } /* Reset del reverse */
+    
+    .features-grid { gap: 3rem; }
 }

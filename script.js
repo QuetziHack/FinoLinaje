@@ -13,13 +13,14 @@ document.querySelectorAll(".nav-menu a").forEach(n => n.addEventListener("click"
 }));
 
 // Botones de Compra / Whatsapp
-const whatsappLink = "https://api.whatsapp.com/send?phone=5214681370504&text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Fino%20Linaje";
 
+const whatsappLink = "https://api.whatsapp.com/send?phone=5214681370504&text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Fino%20Linaje";
+const whatsappLink1 = "https://api.whatsapp.com/send?phone=5215539153965&4text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Fino%20Linaje";
 // Botón del Hero
 const comprarBtn = document.getElementById("comprarBtn");
 if(comprarBtn) {
     comprarBtn.addEventListener("click", () => {
-      window.open(whatsappLink, "_blank");
+      window.open(whatsappLink1, "_blank");
     });
 }
 

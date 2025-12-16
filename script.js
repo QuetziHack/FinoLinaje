@@ -31,3 +31,36 @@ if(btnWhatsapp) {
       window.open(whatsappLink, "_blank");
     });
 }
+
+(function() {
+        var modal = document.getElementById("modal-galeria");
+        var modalImg = document.getElementById("img-expandida");
+        var triggers = document.getElementsByClassName("img-trigger");
+        var span = document.getElementsByClassName("cerrar-modal")[0];
+
+        // Recorrer todas las imágenes triggers y añadir el evento click
+        for (var i = 0; i < triggers.length; i++) {
+            triggers[i].onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src; // Usar la misma fuente de la imagen clickeada
+                modalImg.alt = this.alt;
+            }
+        }
+
+        // Función para cerrar el modal
+        function cerrarModal() {
+             modal.style.display = "none";
+        }
+
+        // Click en la X para cerrar
+        span.onclick = function() {
+            cerrarModal();
+        }
+
+        // Click fuera de la imagen para cerrar
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                cerrarModal();
+            }
+        }
+    })();
